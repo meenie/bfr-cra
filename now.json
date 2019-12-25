@@ -1,0 +1,16 @@
+{
+  "name": "bfr-cra",
+  "alias": "cra.bangforreddit.com",
+  "version": 2,
+  "build": {
+    "env": {
+      "NODEJS_AWS_HANDLER_NAME": "handler"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/graphql",
+      "destination": "/api/graphql"
+    }
+  ]
+}
