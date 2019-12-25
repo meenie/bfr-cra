@@ -11,6 +11,7 @@
     "react-scripts": "^3.3.0"
   },
   "scripts": {
+    "dev": "cd client/ && yarn run dev",
     "build": "cd client/ && yarn install && yarn run build && mv build ../"
   }
 }

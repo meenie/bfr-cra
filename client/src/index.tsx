@@ -2,9 +2,30 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
+import { ApolloClient } from 'apollo-client';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { HttpLink } from 'apollo-link-http';
+import gql from "graphql-tag";
+
 import App from './App';
 import theme from './theme';
 import * as serviceWorker from './serviceWorker';
+
+const cache = new InMemoryCache();
+const link = new HttpLink({
+  uri: '/graphql'
+});
+
+const client = new ApolloClient({
+  cache,
+  link
+});
+
+client.query({
+  query: gql`
+    query { hello }
+  `
+}).then(result => console.log(result))
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
