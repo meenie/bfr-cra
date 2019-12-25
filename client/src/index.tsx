@@ -13,7 +13,7 @@ import * as serviceWorker from './serviceWorker';
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
-  uri: 'https://cra.bangforreddit.com/graphql'
+  uri: '/graphql'
 });
 
 const client = new ApolloClient({
